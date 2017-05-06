@@ -7,19 +7,23 @@ source("customCrossover.R")
 source("customMutation.R")
 source("cecF.R")
 
-
+pcross <- c(0.1, 0.3, 0.5, 0.7, 0.9)
+maxIters <- c(50,100,150,200,300)
+parameterLenhts <- length(pcross)
 # number of cycles of GA executions
-cycles <- 1
+cycles <- 30
 
 # cec2013 function index
 cecNo <- 13
 
 
 # run GA with swapped mutation function
-results <- 0
-iterations <- 0
-meanValues <- 0
+results <- matrix(0,parameterLenhts,cycles)
+iterations <- matrix(0,parameterLenhts,cycles)
+meanValues <- matrix(0,parameterLenhts,cycles)
 
+for (j in 1:parameterLenhts)
+{
 for(i in 1:cycles) {
   GA <- ga(type = "real-valued",                       # for optimization problems where the decision variables are ...
            # ... floating-point representations of real numbers
@@ -28,26 +32,31 @@ for(i in 1:cycles) {
            min = c(-60, 10),              # a vector of length equal to the decision variables providing the minimum of the search space
            max = c(-20, 50),              # like above but maximum; c() function combines arguments and creates vector from them
            popSize = 50,                  # population size
-           maxiter = 1000,                # maximum number of iterations to run before the GA search is halted
-           run = 100,                      # the number of consecutive generations without any improvement ...
+           maxiter = maxIters[j],                # maximum number of iterations to run before the GA search is halted
+           run = 20,                      # the number of consecutive generations without any improvement ...
            # ... in the best fitness value before the GA is stopped
            #pmutation  - probability of mutation
-           #pcrossover - probability of crossover
+           crossover = customCrossover,
+           pcrossover = pcross[j] # probability of crossover
            #elitism    - number of best fitness individuals
-           mutation = gaperm_dmMutation
+           # mutation = gaperm_dmMutation
   )
-  results[i] <- GA@fitnessValue
+  results[j,i] <- GA@fitnessValue
   meanValues[i] <- tail(GA@summary[,"mean"], n=1)
-  iterations[i] <- GA@iter
+  iterations[j,i] <- GA@iter
+}
 }
 
 
 # run GA with default mutation function
 
-resultsDef <- 0
-iterationsDef <- 0
-meanValuesDef <- 0
+resultsDef <- matrix(0,parameterLenhts,cycles)
+iterationsDef <- matrix(0,parameterLenhts,cycles)
+meanValuesDef <- matrix(0,parameterLenhts,cycles)
 
+for (j in 1:parameterLenhts)
+{
+  
 for(i in 1:cycles) {
   GA_default <- ga(type = "real-valued",                       # for optimization problems where the decision variables are ...
                    # ... floating-point representations of real numbers
@@ -56,16 +65,17 @@ for(i in 1:cycles) {
                    min = c(-60, 10),              # a vector of length equal to the decision variables providing the minimum of the search space
                    max = c(-20, 50),              # like above but maximum; c() function combines arguments and creates vector from them
                    popSize = 50,                  # population size
-                   maxiter = 1000,                # maximum number of iterations to run before the GA search is halted
-                   run = 100                      # the number of consecutive generations without any improvement ...
+                   maxiter = maxIters[j],                # maximum number of iterations to run before the GA search is halted
+                   run = 20                     # the number of consecutive generations without any improvement ...
                    # ... in the best fitness value before the GA is stopped
                    #pmutation  - probability of mutation
-                   #pcrossover - probability of crossover
+                   # pcrossover = pcross[j]  #- probability of crossover
                    #elitism    - number of best fitness individuals
   )
-  resultsDef[i] <- GA_default@fitnessValue
-  meanValuesDef[i] <- tail(GA_default@summary[,"mean"], n=1)
-  iterationsDef[i] <- GA_default@iter
+  resultsDef[j,i] <- GA_default@fitnessValue
+  meanValuesDef[i] <- GA_default@summary[,"mean"]
+  iterationsDef[j,i] <- GA_default@iter
+}
 }
 
 print("Swapped:")
@@ -73,7 +83,7 @@ print(summary(GA))
 plot(GA, col="red")
 par(new=T)
 print(mean(results))
-print(mean(meanValues))
+# print(mean(meanValues))
 print(mean(iterations))
 
 print("Default:")
@@ -81,7 +91,7 @@ print(summary(GA_default))
 plot(GA_default, col="green", axes=F, grid=F)
 par(new=F) # dont erase previous plot (to show both)
 print(mean(resultsDef))
-print(mean(meanValuesDef))
+# print(mean(meanValuesDef))
 print(mean(iterationsDef))
 
-
+plot(seq(1,length(GA@summary[, "max"])),GA@summary[,"max"])

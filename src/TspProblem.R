@@ -22,13 +22,14 @@ GA <- ga(type = "permutation",                       # for optimization problems
          # ... a potential solution, and returns a numerical value describing its fitness.
          min = 1,
          max = 100,
-         popSize = 50,                  # population size
-         maxiter = 1000,                # maximum number of iterations to run before the GA search is halted
+         popSize = 150,                  # population size
+         maxiter = 1500,                # maximum number of iterations to run before the GA search is halted
          run = 100                      # the number of consecutive generations without any improvement ...
 )
 
 ###############################################
 
-result = TOUR(GA@solution, method = NA, tsp = tsp)
+#possibly more than one solution - starting coty may diff
+result = TOUR(GA@solution[1,], method = NA, tsp = tsp)
 plot(tsp, result, cex=.6, col = "red", pch= 3, main = "TSPLIB: kroA100")
 
