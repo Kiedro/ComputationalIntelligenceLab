@@ -1,0 +1,9 @@
+PWD /home/wthen/Downloads/1_UNI/SEM III/IOijZ/IOijZ_LAB_4_R_3-5/sprawko/doc/chapters
+INPUT /etc/texmf/web2c/texmf.cnf
+INPUT /usr/share/texmf/web2c/texmf.cnf
+INPUT /usr/share/texlive/texmf-dist/web2c/texmf.cnf
+INPUT /var/lib/texmf/web2c/pdftex/pdflatex.fmt
+INPUT CustomFuctions.tex
+OUTPUT CustomFuctions.log
+INPUT /usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmti10.tfm

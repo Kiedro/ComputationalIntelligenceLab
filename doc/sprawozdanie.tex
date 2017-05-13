@@ -7,7 +7,7 @@
 % http://www.LaTeXTemplates.com
 %
 % Original author:
-% Linux and Unix Users Group at Virginia Tech Wiki 
+% Linux and Unix Users Group at Virginia Tech Wiki
 % (https://vtluug.org/wiki/Example_LaTeX_chem_lab_report)
 %
 % License:
@@ -24,7 +24,7 @@
 \usepackage{siunitx} % Provides the \SI{}{} and \si{} command for typesetting SI units
 \usepackage{graphicx} % Required for the inclusion of images
 %\usepackage{natbib} % Required to change bibliography style to APA
-\usepackage{amsmath} % Required for some math elements 
+\usepackage{amsmath} % Required for some math elements
 \usepackage[margin=1.5in]{geometry}
 
 
@@ -41,6 +41,7 @@
 \usepackage{float}
 \usepackage[table]{xcolor}
 \usepackage{enumerate}
+\usepackage{enumitem}
 \usepackage{subcaption}
 \usepackage{listings}
 
@@ -60,60 +61,39 @@
 \author{\\
 	\\\textbf{Autorzy:}
 	\\Maciej Kiedrowski, nr indeksu: 200105
-	\\Wojciech Then, nr indeksu: 
-	\\\\
+	\\Wojciech Then, nr indeksu: 196057
+	\\
+	\\
 	\\
 	\\\textbf{Grupa:} Środa 18:55}
-\date{\textbf{Data oddania:} 07.05.2017}
+\date{\textbf{Data oddania:} 13.05.2017}
 
 \begin{document}
-	
+
 	\maketitle % Insert the title, author and date
-	
+
 	\begin{center}
 		\begin{tabular}{l r}
 			%Data wykonania ćwiczenia: & ... \\ % Date the experiment was performed
 			%Partners: & James Smith \\ % Partner names
 			%& Mary Smith \\
-			Prowadzący: & Dr hab. inż. Olgierd Unold 
-			
+			Prowadzący: & Dr hab. inż. Olgierd Unold
+
 		\end{tabular}
 	\end{center}
-	
-	
+
+
 	\newpage
 	\tableofcontents 	%spis tresci
 	\newpage
-	
+
 	\input{./chapters/CustomFuctions}
 	\newpage
 	\input{./chapters/Tsp}
 	\newpage
+	\input{./chapters/Memetic}
+	\newpage
 	\input{./chapters/SourceCode}
-%	\newpage
-%	\input{./chapters/Zalozenia}
-%	\newpage
-%	\input{./chapters/Implementacja}
-%	\newpage
-%	\input{./chapters/Proby}
-%	\newpage
-%	\input{./chapters/Wnioski}
 
-	% If you wish to include an abstract, uncomment the lines below
-	% \begin{abstract}
-	% Abstract text
-	% \end{abstract}
-	
-	%----------------------------------------------------------------------------
-	
-	
-	%\begin{figure}[h]
-	%	\begin{center}
-	%		\includegraphics[width=0.65\textwidth]{placeholder} % Include the image placeholder.png
-	%		\caption{Figure caption.}
-	%	\end
-	%	{center}
-	%\end{figure}
-	
-	
+
 \end{document}

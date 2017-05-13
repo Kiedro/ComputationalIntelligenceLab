@@ -1,0 +1,13 @@
+# Fdb version 3
+["pdflatex"] 1494690251 "CustomFuctions.tex" "CustomFuctions.pdf" "CustomFuctions" 1494690251
+  "/etc/texmf/web2c/texmf.cnf" 1494682403 475 c0e671620eb5563b2130f56340a5fde8 ""
+  "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1272929888 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
+  "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmti10.tfm" 1136768653 1480 aa8e34af0eb6a2941b776984cf1dfdc4 ""
+  "/usr/share/texlive/texmf-dist/web2c/texmf.cnf" 1458942643 31351 b32c45dce4a01cb7b53ed90c546614ca ""
+  "/usr/share/texmf/web2c/texmf.cnf" 1458942643 31351 b32c45dce4a01cb7b53ed90c546614ca ""
+  "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1494689304 771902 a2ba5666c4fea180eba1e8f29f0039aa ""
+  "CustomFuctions.aux" 1494682599 8 a94a2480d3289e625eea47cd1b285758 ""
+  "CustomFuctions.tex" 1494690250 3206 7a5dabd7b420498e7dbb86261870f71e ""
+  (generated)
+  "CustomFuctions.pdf"
+  "CustomFuctions.log"

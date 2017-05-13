@@ -1,4 +1,4 @@
-# modyfication of gareal_waCrossover taken from https://github.com/cran/GA/blob/master/R/genope.R
+# modification of gareal_waCrossover taken from https://github.com/cran/GA/blob/master/R/genope.R
 
 customCrossover <- function(object, parents, ...)
 {
