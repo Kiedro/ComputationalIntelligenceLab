@@ -1,6 +1,6 @@
 \section{TSP}
 
-Badania dla problmu TSP zostały wykonane z użyciem instancji problemu \textit{kroa100}, o rozwiązaniu 21282. 
+Badania dla problmu TSP zostały wykonane z użyciem instancji problemu \textit{kroa100}, o rozwiązaniu 21282.tsp
 
 
 \begin{figure}[H]
@@ -10,7 +10,7 @@ Badania dla problmu TSP zostały wykonane z użyciem instancji problemu \textit{
 \end{figure}
 
 \paragraph{Parametry}
-Badania wpływu parametrów na uzyskiwane wyniki zostały przeprowadzone dla parametrów określających szansę na krzyżowanie oraz wielkość populacji. Wyniki zostały uśrednione z 15 przebiegów algorytmu. Ustawienia: 
+Badania wpływu parametrów na uzyskiwane wyniki zostały przeprowadzone dla parametrów określających szansę na krzyżowanie oraz wielkość populacji. Wyniki zostały uśrednione z 15 przebiegów algorytmu. Ustawienia:
 
 \begin{itemize}
 	\item popSize = 50
@@ -45,3 +45,5 @@ Zwiększenie parametru \textit{pcrossover} powyżej wartości domyślnej 0,8 pow
 
 Wielkość populacji ma bezpośredni wpływ na osiągane rezultaty - jej zwiększanie poprawia końcowy wynik. Zwiększanie tego parametru powoduje jednak znaczące wydłużenie czasu działania algorytmu, natomiast zysk stopniowo się zmniejsza. W czasie przeprowadzania badań najkorzystniejszą wielkością populacji okazało się 100 - powyżej tej wartości długość obliczeń dla pojedynczej iteracji jest zbyt duża. Kompromisem jest  zmniejszanie populacji a zwiększanie dopuszczalnej liczby maksymalnej iteracji. \\
 Aby określić najkorzystniejsze parametry należałoby przeprowadzić badania algorytmu dla tych parametrów, porównując osiągane wyniki po zadanym czasie, np. 1 minuty.
+
+
